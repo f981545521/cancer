@@ -14,8 +14,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * WebSocket 聊天室
+ * 测试：
+ * http://www.websocket-test.com/
+ * ws地址：
+ * ws://192.168.1.27:8055/chartRoom/456
  */
-@ServerEndpoint("/websocket/{sid}")
+@ServerEndpoint("/chartRoom/{sid}")
 @Component
 @Slf4j
 public class ChartRoomServer {
