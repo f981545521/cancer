@@ -1,6 +1,6 @@
 package cn.acyou.cancer.mq;
 
-import cn.acyou.cancer.ws.WebSocketServer;
+import cn.acyou.cancer.ws.ChartRoomServer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -19,6 +19,6 @@ public class OrderReceiver {
     @RabbitListener(queues = "order", containerFactory="rabbitListenerContainerFactory")
     public void process(String message) {
         System.out.println("RabbitMQ ————————————> Receiver : " + message);
-        WebSocketServer.sendInfo("every one ： " + message, null);
+        ChartRoomServer.sendEveryOneMessage("every one ： " + message);
     }
 }
